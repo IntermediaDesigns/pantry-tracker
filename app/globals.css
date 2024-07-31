@@ -78,7 +78,7 @@
   flex-direction: column;
   justify-content: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-margin: 1rem 2rem;
+  margin: 1rem 2rem;
 }
 
 .featuresHero h1 {
@@ -146,7 +146,6 @@ footer {
   font-size: 1.3rem;
   font-weight: 300;
 }
-
 
 /* Media Queries */
 @media (max-width: 843px) {
@@ -219,7 +218,6 @@ footer {
     margin-left: 1.5rem;
     list-style: circle;
   }
-
 }
 
 @media (max-width: 457px) {
