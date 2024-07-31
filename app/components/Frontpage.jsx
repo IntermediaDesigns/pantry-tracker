@@ -4,12 +4,12 @@ import "../globals.css";
 function FrontPage() {
   return (
     <>
-      <section>
-        <div className="flex justify-center items-start my-8">
+      <section className="heroSection">
+        <div className="flex justify-center items-start">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Welcome to Pantry!</h1>
-            <p className="text-lg">The best way to manage your pantry.</p>
-            <div className="mt-8">
+            <h1>Welcome to Pantry!</h1>
+            <p>The best way to manage your pantry.</p>
+            <div className="mt-8 flex justify-center gap-5">
               <a
                 href="/login"
                 className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
@@ -30,9 +30,10 @@ function FrontPage() {
         <div className="flex justify-center items-center gap-16">
           <div>
             <img
-              src="https://via.placeholder.com/300"
+              src="../../fruitveggies.jpg"
               alt="pantry"
               className="rounded-lg shadow-lg"
+              id="frontImg"
             />
           </div>
           <div className="text-center">

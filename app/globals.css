@@ -11,3 +11,31 @@
   box-sizing: border-box;
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 }
+
+/* Front Page */
+.heroSection {
+  min-height: 250px;
+  padding-top: 3rem;
+}
+
+.heroSection h1 {
+  font-family: 'Trirong', serif;
+  font-size: 4rem;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+
+.heroSection p {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#frontImg {
+  width: 400px;
+  height: auto;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
