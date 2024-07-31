@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,17 +14,24 @@
 
 /* Front Page */
 .heroSection {
-  min-height: 250px;
-  padding-top: 3rem;
+  min-height: 300px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .heroSection h1 {
-  font-family: 'Trirong', serif;
+  font-family: "Trirong", serif;
   font-size: 4rem;
   color: goldenrod;
   text-align: center;
   font-weight: 600;
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
+  text-wrap: wrap;
 }
 
 .heroSection p {
@@ -34,8 +41,276 @@
   margin-top: 1rem;
 }
 
+.imgContainer {
+  max-width: 500px;
+  width: 100%;
+  min-height: 345px;
+  height: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.13
+  ); /* Light transparent background */
+  border-radius: 10px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+}
+
 #frontImg {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   height: auto;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  scale: 1.1;
+}
+
+.featuresHero {
+  min-height: 500px;
+  height: auto;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+margin: 1rem 2rem;
+}
+
+.featuresHero h1 {
+  font-family: "Trirong", serif;
+  font-size: 3rem;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.typewriter h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.06em;
+  animation: typewriter 4s steps(30, end) 1s 1 normal both,
+    blinkTextCursor 500ms steps(9, end) infinite normal;
+}
+
+.featuresHero p {
+  font-size: 1.5rem;
+  color: #fff;
+
+  margin-top: 1rem;
+  text-wrap: wrap;
+  white-space: wrap;
+}
+
+.featuresHero ul li {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  list-style: circle;
+}
+
+/* Footer */
+footer {
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+
+/* Media Queries */
+@media (max-width: 843px) {
+  .heroSection h1 {
+    font-size: 3rem;
+    text-wrap: wrap;
+  }
+
+  .typewriter h1 {
+    animation: none;
+    border-right: none;
+  }
+
+  .heroSection p {
+    font-size: 1.2rem;
+    text-wrap: wrap;
+  }
+
+  .featuresHero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #featuresContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgContainer {
+    min-width: 400px;
+    width: 100%;
+    min-height: 280px;
+    height: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.13
+    ); /* Light transparent background */
+    border-radius: 10px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+  }
+
+  #frontImg {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    scale: 1.1;
+  }
+
+  .featuresHero p {
+    font-size: 1.2rem;
+    text-wrap: wrap;
+  }
+
+  .featuresHero ul li {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    list-style: circle;
+  }
+
+}
+
+@media (max-width: 457px) {
+  .imgContainer {
+    min-width: 350px;
+    width: 100%;
+    min-height: 250px;
+    height: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.13
+    ); /* Light transparent background */
+    border-radius: 10px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+  }
+
+  #frontImg {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    scale: 1.1;
+  }
+}
+
+@media (max-width: 422px) {
+  .imgContainer {
+    min-width: 290px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.13
+    ); /* Light transparent background */
+    border-radius: 10px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+  }
+
+  #frontImg {
+    max-width: 210px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    scale: 1.1;
+  }
+}
+
+@media (max-width: 320px) {
+  .imgContainer {
+    min-width: 250px;
+    width: 100%;
+    min-height: 180px;
+    height: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.13
+    ); /* Light transparent background */
+    border-radius: 10px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+  }
+
+  #frontImg {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    scale: 1.1;
+  }
 }

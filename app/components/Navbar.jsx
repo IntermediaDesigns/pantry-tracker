@@ -6,12 +6,18 @@ function Navbar() {
   return (
     <nav className="mx-8 my-4 flex justify-between items-center">
       <a href="#">
-        <Image src="/pantry.png" alt="" width={80} height={80} />
+        <Image
+          src="/pantry.png"
+          alt=""
+          width={80}
+          height={80}
+          className="hover:scale-110 transform transition duration-300"
+        />
       </a>
       <div>
         <a
-          href=""
-          className="ml-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+          href="/logout"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg flex  hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
         >
           Logout
         </a>
