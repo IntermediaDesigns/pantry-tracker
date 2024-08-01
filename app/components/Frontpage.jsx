@@ -13,13 +13,13 @@ function FrontPage() {
         <div className="mt-8 flex justify-center gap-5">
           <a
             href="/login"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
+            className="bg-blue-500 text-white text-xl px-6 py-2 rounded-lg hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
           >
             Login
           </a>
           <a
             href="/signup"
-            className="ml-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 hover:scale-110 transition duration-300 shadow-lg"
+            className="ml-4 bg-blue-500 text-white text-xl px-6 py-2 rounded-lg hover:bg-blue-700 hover:scale-110 transition duration-300 shadow-lg"
           >
             Sign Up
           </a>
@@ -53,7 +53,7 @@ function FrontPage() {
       </section>
       <footer>
         <div className="flex justify-center items-center">
-          <p>&copy; 2021 Pantry. All rights reserved.</p>
+          <p>&copy; 2024 Pantry. All rights reserved.</p>
         </div>
       </footer>
     </div>

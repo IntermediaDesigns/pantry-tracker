@@ -5,7 +5,7 @@ import Image from "next/image";
 function Navbar() {
   return (
     <nav className="mx-8 my-4 flex justify-between items-center">
-      <a href="#">
+      <a href="/">
         <Image
           src="/pantry.png"
           alt=""
@@ -17,7 +17,7 @@ function Navbar() {
       <div>
         <a
           href="/logout"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg flex  hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
+          className="bg-blue-500 text-white text-xl px-6 py-2 rounded-lg flex  hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
         >
           Logout
         </a>

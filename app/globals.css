@@ -46,20 +46,13 @@
   width: 100%;
   min-height: 345px;
   height: 100%;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.13
-  ); /* Light transparent background */
+  background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
   position: relative;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(
-    10px
-  ); /* Add -webkit-backdrop-filter for Safari */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #frontImg {
@@ -152,6 +145,91 @@ footer {
   font-weight: 300;
 }
 
+/* Login/Signup Page */
+#mainFormContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+
+#mainFormContainer h1 {
+  font-family: "Trirong", serif;
+  font-size: 3rem;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+#mainFormContainer form {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #0f0c29;
+  font-size: 1.2rem;
+}
+
+form button {
+  width: 25%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: goldenrod;
+  color: #0f0c29;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #ffcc29;
+  transform: scale(1.1);
+}
+
+form button:active {
+  transform: scale(0.9);
+}
+
+#mainFormContainer p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+#mainFormContainer a {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+#mainFormContainer a:hover {
+  color: #ffcc29;
+}
+
+
 /* Media Queries */
 @media (max-width: 843px) {
   .heroSection h1 {
@@ -188,18 +266,13 @@ footer {
     width: 100%;
     min-height: 280px;
     height: 100%;
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.13
-    ); /* Light transparent background */
+    background-color: rgba(255, 255, 255, 0.13);
     border-radius: 10px;
     position: relative;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   #frontImg {
@@ -234,18 +307,13 @@ footer {
     width: 100%;
     min-height: 250px;
     height: 100%;
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.13
-    ); /* Light transparent background */
+    background-color: rgba(255, 255, 255, 0.13);
     border-radius: 10px;
     position: relative;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   #frontImg {
@@ -268,18 +336,13 @@ footer {
     width: 100%;
     min-height: 220px;
     height: 100%;
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.13
-    ); /* Light transparent background */
+    background-color: rgba(255, 255, 255, 0.13);
     border-radius: 10px;
     position: relative;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   #frontImg {
@@ -302,18 +365,13 @@ footer {
     width: 100%;
     min-height: 180px;
     height: 100%;
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.13
-    ); /* Light transparent background */
+    background-color: rgba(255, 255, 255, 0.13);
     border-radius: 10px;
     position: relative;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   #frontImg {
