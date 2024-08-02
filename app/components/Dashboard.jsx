@@ -158,7 +158,7 @@ export default function Dashboard() {
       <div className="dashboard">
         <div className="leftDashboard">
           <div>
-            <Recipes />
+            <Recipes inventory={inventory} />
           </div>
           <div>
             <Favorites favorites={favorites} toggleFavorite={toggleFavorite} />
