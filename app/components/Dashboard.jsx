@@ -45,7 +45,9 @@ export default function Dashboard() {
 
   const updateInventory = async () => {
     if (auth.currentUser) {
-      const snapshot = query(collection(firestore, `users/${auth.currentUser.uid}/inventory`));
+      const snapshot = query(
+        collection(firestore, `users/${auth.currentUser.uid}/inventory`)
+      );
       const docs = await getDocs(snapshot);
       const inventoryList = docs.docs.map((doc) => ({
         name: doc.id,
@@ -71,13 +73,16 @@ export default function Dashboard() {
       console.log(`Generating image for ${item}...`);
       let imageUrl = await generateImage(`A photo of one ${item}`);
       console.log(`Image URL generated: ${imageUrl}`);
-  
+
       if (!imageUrl) {
         console.error("Failed to generate image, using placeholder");
         imageUrl = "/placeholder.jpg";
       }
-  
-      const docRef = doc(collection(firestore, `users/${auth.currentUser.uid}/inventory`), item);
+
+      const docRef = doc(
+        collection(firestore, `users/${auth.currentUser.uid}/inventory`),
+        item
+      );
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         const { quantity } = docSnap.data();
@@ -91,7 +96,7 @@ export default function Dashboard() {
           imageUrl: imageUrl,
         });
       }
-  
+
       console.log(`Item ${item} added successfully`);
       await updateInventory();
       setItemName("");
@@ -103,7 +108,10 @@ export default function Dashboard() {
   };
 
   const changeQuantity = async (item, change) => {
-    const docRef = doc(collection(firestore, `users/${auth.currentUser.uid}/inventory`), item);
+    const docRef = doc(
+      collection(firestore, `users/${auth.currentUser.uid}/inventory`),
+      item
+    );
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const { quantity } = docSnap.data();
@@ -114,8 +122,22 @@ export default function Dashboard() {
   };
 
   const removeItem = async (item) => {
-    const docRef = doc(collection(firestore, `users/${auth.currentUser.uid}/inventory`), item);
+    const docRef = doc(
+      collection(firestore, `users/${auth.currentUser.uid}/inventory`),
+      item
+    );
     await deleteDoc(docRef);
+
+    // Remove from favorites if it exists there
+    if (favorites.includes(item)) {
+      const userRef = doc(firestore, "users", auth.currentUser.uid);
+      await updateDoc(userRef, {
+        favorites: arrayRemove(item),
+      });
+      // Update local state
+      setFavorites(favorites.filter((fav) => fav !== item));
+    }
+
     await updateInventory();
   };
 
