@@ -538,17 +538,18 @@ form button:active {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  padding: .5rem 1.5rem;
 }
 
 .recipes h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-wrap: wrap;
   color: #fff;
   text-transform: capitalize;
   letter-spacing: 0.06em;
   text-align: center;
   margin: 0 auto;
-  height: 48px;
+  height: 58px;
 }
 
 .recipes a {
