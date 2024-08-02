@@ -39,18 +39,21 @@ export default function Navbar() {
           className="hover:scale-110 transform transition duration-300"
           style={{ width: "auto", height: "auto" }}
           priority
+          id="homeImg"
         />
       </a>
       <div>
         {user ? (
           <div className="flex gap-8" id="navLinks">
             <a
+              id="navBtn"
               href="/dashboard"
               className="bg-blue-500 text-white text-xl px-6 py-2 rounded-lg flex hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
             >
               Dashboard
             </a>
             <button
+              id="navBtn"
               onClick={handleLogout}
               className="bg-blue-500 text-white text-xl px-6 py-2 rounded-lg flex hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
             >
@@ -60,12 +63,14 @@ export default function Navbar() {
         ) : (
           <div className="mt-8 flex justify-center gap-7" id="navLinks">
             <a
+              id="navBtn"
               href="/login"
               className="bg-blue-500 text-white text-xl px-6 py-2 rounded-lg hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"
             >
               Login
             </a>
             <a
+              id="navBtn"
               href="/signup"
               className="bg-blue-500 text-white text-xl px-6 py-2 rounded-lg hover:bg-blue-700 hover:scale-110 transition duration-300 shadow-lg"
             >

@@ -13,14 +13,14 @@
 }
 
 /* Front Page */
+main {
+  height: 100%;
+}
+
 .heroSection {
-  min-height: 300px;
+  min-height: 150px;
   height: auto;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -41,41 +41,27 @@
   margin-top: 1rem;
 }
 
-.imgContainer {
-  max-width: 500px;
-  width: 100%;
-  min-height: 345px;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.13);
-  border-radius: 10px;
-  position: relative;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 #frontImg {
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   height: auto;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 40px;
-  left: 50px;
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
+  top: 25px;
+  left: 25px;
+  border-radius: 10px;
+  border: 25px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .featuresHero {
-  min-height: 500px;
-  height: auto;
+  width: 100%;
+  height: 50vh;
+  margin: 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 0 2rem;
 }
 
 .featuresHero h1 {
@@ -136,13 +122,14 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   height: auto;
   font-size: 1.3rem;
   font-weight: 300;
   letter-spacing: 0.06em;
+  z-index: 1000; /* Ensures the footer stays on top of other content */
 }
 
 /* Login/Signup Page */
@@ -505,31 +492,82 @@ form button:active {
 }
 
 /* Media Queries */
-@media (max-width: 1330px) {
-  .dashboard {
+/* Here’s what I use that have been great
+
+Start at 360px
+
+568px
+
+666px
+
+768px
+
+1024px
+
+1300px */
+/* Default: Extra-small devices such as small phones */
+@media only screen and (max-width: 360px) {
+  main {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 1rem;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
   }
 
-  .leftDashboard,
-  .inventory {
+  nav a {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+
+  #homeImg {
+    width: 50px;
+    height: 50px;
+  }
+
+  #navLinks {
     width: 100%;
-    padding: 1rem;
-  }
-
-  .inventory {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    gap: 1rem;
   }
 
-  .inventoryItems {
-    width: 100%;
-    max-width: 700px;
+  #navBtn {
+    font-size: .7rem;
+    padding: .2rem 1rem;
+    width: auto;
   }
-}
 
-@media (max-width: 843px) {
+  .heroSection {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
   .heroSection h1 {
-    font-size: 3rem;
+    text-wrap: wrap;
+    font-size: 2.5rem;
+    margin: 0 auto;
+  }
+
+  .heroSection p {
+    font-size: 1rem;
     text-wrap: wrap;
   }
 
@@ -538,16 +576,10 @@ form button:active {
     border-right: none;
   }
 
-  .heroSection p {
-    font-size: 1.2rem;
-    text-wrap: wrap;
-  }
-
   .featuresHero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    margin-bottom: 8rem;
+
   }
 
   #featuresContainer {
@@ -557,150 +589,119 @@ form button:active {
     align-items: center;
   }
 
-  .imgContainer {
-    min-width: 400px;
-    width: 100%;
-    min-height: 280px;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.13);
-    border-radius: 10px;
-    position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  #frontImg {
+    width: 250px;
+    height: auto;
+    border: 4px solid rgba(255, 255, 255, 0.2);
   }
 
-  #frontImg {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 40px;
-    left: 50px;
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
+  .featuresHero h1 {
+    font-size: 2.5rem;
   }
 
   .featuresHero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-wrap: wrap;
   }
 
   .featuresHero ul li {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 1rem;
     margin-left: 1.5rem;
-    list-style: circle;
   }
 
-  .dashboard {
-    display: flex;
-    flex-wrap: wrap;
+  footer p {
+    font-size: 1rem;
+    text-wrap: wrap;
   }
+
 }
 
-@media (max-width: 457px) {
-  .imgContainer {
-    min-width: 350px;
-    width: 100%;
-    min-height: 250px;
+@media only screen and (min-width: 361px) and (max-width: 639px) {
+
+  .typewriter h1 {
+    font-size: 3rem;
+  }
+
+  .featuresHero {
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.13);
-    border-radius: 10px;
-    position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 8rem;
   }
 
-  #frontImg {
-    max-width: 250px;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 40px;
-    left: 50px;
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-  }
-}
-
-@media (max-width: 422px) {
-  .imgContainer {
-    min-width: 290px;
-    width: 100%;
-    min-height: 220px;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.13);
-    border-radius: 10px;
-    position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  #frontImg {
-    max-width: 210px;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-  }
-
-  #navLinks {
+ #featuresContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-}
-
-@media (max-width: 320px) {
-  .imgContainer {
-    min-width: 250px;
-    width: 100%;
-    min-height: 180px;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.13);
-    border-radius: 10px;
-    position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
   }
 
   #frontImg {
-    max-width: 180px;
-    width: 100%;
+    width: 370px;
     height: auto;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
+    border: 10px solid rgba(255, 255, 255, 0.2);
   }
 
-  #navLinks {
+}
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 640px) and (max-width: 767px) {
+
+  .typewriter h1 {
+    font-size: 3.5rem;
+  }
+
+  .featuresHero {
+    height: 100%;
+    margin-bottom: 8rem;
+  }
+
+  #featuresContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
   }
 
+  #frontImg {
+    width: 450px;
+    height: auto;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+  }
 
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .typewriter h1 {
+    font-size: 4rem;
+  }
+
+  .featuresHero {
+    height: 100%;
+    margin-bottom: 8rem;
+  }
+
+  #featuresContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  #frontImg {
+    width: 500px;
+    height: auto;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 1024px) {
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 1280px) {
 }

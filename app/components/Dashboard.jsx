@@ -22,6 +22,7 @@ import placeholderImage from "../../public/placeholder.jpg";
 import Grocerylist from "./Grocerylist";
 import Footer from "./Footer";
 import Favorites from "./Favorites";
+import Recipes from "./Recipes";
 
 export default function Dashboard() {
   const [inventory, setInventory] = useState([]);
@@ -156,6 +157,9 @@ export default function Dashboard() {
       />
       <div className="dashboard">
         <div className="leftDashboard">
+          <div>
+            <Recipes />
+          </div>
           <div>
             <Favorites favorites={favorites} toggleFavorite={toggleFavorite} />
           </div>
