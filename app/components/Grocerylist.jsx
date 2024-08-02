@@ -9,8 +9,7 @@ import {
   arrayRemove,
 } from "firebase/firestore";
 
-const Grocerylist = ({ inventory, userId }) => {
-  const [groceryItems, setGroceryItems] = useState([]);
+const Grocerylist = ({ inventory, userId, groceryList, setGroceryList }) => {
   const [selectedItem, setSelectedItem] = useState("");
 
   useEffect(() => {
@@ -19,16 +18,16 @@ const Grocerylist = ({ inventory, userId }) => {
         const userDocRef = doc(firestore, "users", userId);
         const userDoc = await getDoc(userDocRef);
         if (userDoc.exists() && userDoc.data().groceryList) {
-          setGroceryItems(userDoc.data().groceryList);
+          setGroceryList(userDoc.data().groceryList);
         }
       }
     };
 
     fetchGroceryList();
-  }, [userId]);
+  }, [userId, setGroceryList]);
 
   const addGroceryItem = async () => {
-    if (selectedItem && !groceryItems.includes(selectedItem) && userId) {
+    if (selectedItem && !groceryList.includes(selectedItem) && userId) {
       const userDocRef = doc(firestore, "users", userId);
       await setDoc(
         userDocRef,
@@ -38,7 +37,7 @@ const Grocerylist = ({ inventory, userId }) => {
         { merge: true }
       );
 
-      setGroceryItems([...groceryItems, selectedItem]);
+      setGroceryList([...groceryList, selectedItem]);
       setSelectedItem("");
     }
   };
@@ -54,7 +53,7 @@ const Grocerylist = ({ inventory, userId }) => {
         { merge: true }
       );
 
-      setGroceryItems(groceryItems.filter((item) => item !== itemToRemove));
+      setGroceryList(groceryList.filter((item) => item !== itemToRemove));
     }
   };
 
@@ -84,7 +83,7 @@ const Grocerylist = ({ inventory, userId }) => {
       </div>
       <div className="groceryList mt-2">
         <ul>
-          {groceryItems.map((item) => (
+          {groceryList.map((item) => (
             <li key={item} className="flex justify-between items-center mb-2">
               <span>{item}</span>
               <button

@@ -32,6 +32,7 @@ export default function Dashboard() {
   const [itemName, setItemName] = useState("");
   const auth = getAuth();
   const [isLoading, setIsLoading] = useState(false);
+  const [groceryList, setGroceryList] = useState([]);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -43,7 +44,17 @@ export default function Dashboard() {
     setSearch(e.target.value);
   };
 
-  const updateInventory = async () => {
+  const updateGroceryList = useCallback(async () => {
+    if (auth.currentUser) {
+      const userRef = doc(firestore, "users", auth.currentUser.uid);
+      const userSnap = await getDoc(userRef);
+      if (userSnap.exists()) {
+        setGroceryList(userSnap.data().groceryList || []);
+      }
+    }
+  }, [auth.currentUser]);
+
+  const updateInventory = useCallback(async () => {
     if (auth.currentUser) {
       const snapshot = query(
         collection(firestore, `users/${auth.currentUser.uid}/inventory`)
@@ -55,7 +66,7 @@ export default function Dashboard() {
       }));
       setInventory(inventoryList);
     }
-  };
+  }, [auth.currentUser, setInventory]);
 
   const updateFavorites = useCallback(async () => {
     if (auth.currentUser) {
@@ -122,20 +133,37 @@ export default function Dashboard() {
   };
 
   const removeItem = async (item) => {
-    const docRef = doc(
-      collection(firestore, `users/${auth.currentUser.uid}/inventory`),
+    if (!auth.currentUser) return;
+
+    const userId = auth.currentUser.uid;
+
+    // Remove from inventory
+    const inventoryDocRef = doc(
+      collection(firestore, `users/${userId}/inventory`),
       item
     );
-    await deleteDoc(docRef);
+    await deleteDoc(inventoryDocRef);
 
     // Remove from favorites if it exists there
     if (favorites.includes(item)) {
-      const userRef = doc(firestore, "users", auth.currentUser.uid);
+      const userRef = doc(firestore, "users", userId);
       await updateDoc(userRef, {
         favorites: arrayRemove(item),
       });
-      // Update local state
       setFavorites(favorites.filter((fav) => fav !== item));
+    }
+
+    // Remove from grocery list if it exists there
+    const userRef = doc(firestore, "users", userId);
+    const userDoc = await getDoc(userRef);
+    if (
+      userDoc.exists() &&
+      userDoc.data().groceryList &&
+      userDoc.data().groceryList.includes(item)
+    ) {
+      await updateDoc(userRef, {
+        groceryList: arrayRemove(item),
+      });
     }
 
     await updateInventory();
@@ -164,8 +192,9 @@ export default function Dashboard() {
     if (auth.currentUser) {
       updateInventory();
       updateFavorites();
+      updateGroceryList();
     }
-  }, [auth.currentUser, updateFavorites, updateInventory]);
+  }, [auth.currentUser, updateFavorites, updateInventory, updateGroceryList]);
 
   const filteredInventory = inventory.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
@@ -190,7 +219,12 @@ export default function Dashboard() {
             <Favorites favorites={favorites} toggleFavorite={toggleFavorite} />
           </div>
           <div>
-            <Grocerylist inventory={inventory} userId={auth.currentUser?.uid} />
+            <Grocerylist
+              inventory={inventory}
+              userId={auth.currentUser?.uid}
+              groceryList={groceryList}
+              setGroceryList={setGroceryList}
+            />
           </div>
         </div>
 
