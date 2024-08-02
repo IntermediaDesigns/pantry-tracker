@@ -299,6 +299,7 @@ form button:active {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 8rem;
 }
 
 .leftDashboard {
@@ -334,7 +335,7 @@ form button:active {
 }
 
 .inventoryItems {
-  width: 700px;
+  width: 600px;
   height: auto;
   gap: 1rem;
   justify-content: center;
@@ -720,7 +721,7 @@ Start at 360px
 }
 
 .inventory {
-
+margin-bottom: 8rem;
 }
 
 .inventory h1 {
@@ -733,7 +734,20 @@ Start at 360px
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+}
+
+.inventoryItems span {
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+#inventoryItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .searchContainer {
@@ -818,6 +832,108 @@ Start at 360px
     border: 10px solid rgba(255, 255, 255, 0.2);
   }
 
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 900px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .leftDashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inventory {
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .inventory h1 {
+    font-size: 2.5rem;
+  }
+  
+  .inventoryItems {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inventoryItems span {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #inventoryItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .favoritesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .favoritesContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .favorites {
+    min-width: 250px;
+  }
+  
+  .groceryContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+  }
+  
+  .groceryContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .groceryList {
+    width: 250px;
+  }
+  
+  .recipeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
 }
 
 /* Small devices such as large phones (640px and up) */
@@ -846,6 +962,108 @@ Start at 360px
     border: 10px solid rgba(255, 255, 255, 0.2);
   }
 
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 900px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .leftDashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inventory {
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .inventory h1 {
+    font-size: 2.5rem;
+  }
+  
+  .inventoryItems {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inventoryItems span {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #inventoryItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .favoritesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .favoritesContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .favorites {
+    min-width: 350px;
+  }
+  
+  .groceryContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+  }
+  
+  .groceryContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .groceryList {
+    width: 350px;
+  }
+  
+  .recipeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
 }
 
 /* Medium devices such as tablets (768px and up) */
@@ -872,10 +1090,215 @@ Start at 360px
     height: auto;
     border: 10px solid rgba(255, 255, 255, 0.2);
   }
+
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 900px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .leftDashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inventory {
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  }
+  
+  .inventory h1 {
+    font-size: 2.5rem;
+  }
+  
+  .inventoryItems {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+  }
+  
+  .inventoryItems span {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #inventoryItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .favoritesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .favoritesContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .favorites {
+    min-width: 450px;
+  }
+  
+  .groceryContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+  }
+  
+  .groceryContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .groceryList {
+    width: 450px;
+  }
+  
+  .recipeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 /* Large devices such as laptops (1024px and up) */
-@media only screen and (min-width: 1024px) {
+@media only screen (min-width: 769px) and (max-width: 1300px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 900px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .leftDashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inventory {
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  }
+  
+  .inventory h1 {
+    font-size: 2.5rem;
+  }
+  
+  .inventoryItems {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+  }
+  
+  .inventoryItems span {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #inventoryItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .favoritesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .favoritesContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .favorites {
+    min-width: 550px;
+  }
+  
+  .groceryContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .groceryContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .groceryList {
+    width: 550px;
+  }
+  
+  .recipeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 /* Largest devices such as desktops (1280px and up) */

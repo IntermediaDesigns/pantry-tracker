@@ -259,7 +259,7 @@ export default function Dashboard() {
               {filteredInventory.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center justify-between p-4 border-b mb-4"
+                  className="flex items-center justify-between p-4 border-b mb-4" id="inventoryItem"
                 >
                   {item.imageUrl ? (
                     <Image
