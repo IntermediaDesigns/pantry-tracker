@@ -15,7 +15,7 @@
 
 /* Front Page */
 main {
-  height: 100%;
+  min-height: 850px;
 }
 
 .heroSection {
@@ -123,7 +123,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: auto;
@@ -141,7 +141,6 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem 2rem;
 }
 
 #mainFormContainer h1 {
@@ -156,7 +155,7 @@ footer {
 #mainFormContainer form {
   width: 100%;
   height: auto;
-  max-width: 400px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -182,7 +181,7 @@ form input {
 }
 
 form button {
-  width: 25%;
+  width: 50%;
   padding: 0.5rem;
   margin: 0.5rem 0;
   border: none;
@@ -237,7 +236,7 @@ form button:active {
   margin-right: auto;
   position: absolute;
   top: 15%;
-  left: 50%;
+  left: 47%;
   transform: translate(-50%, -50%);
   z-index: 10;
 }
@@ -295,10 +294,11 @@ form button:active {
 .dashboard {
   width: 100%;
   height: auto;
+  min-height: 820px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .leftDashboard {
@@ -316,14 +316,12 @@ form button:active {
 /* Inventory */
 .inventory {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  align-items: flex-end;
-  padding-right: 4rem;
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
 .inventory h1 {
@@ -706,6 +704,92 @@ Start at 360px
     font-size: 1rem;
     text-wrap: wrap;
   }
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 900px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftDashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory {
+
+}
+
+.inventory h1 {
+  font-size: 2.5rem;
+}
+
+.inventoryItems {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.favoritesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.favoritesContainer h1 {
+  font-size: 2.5rem;
+}
+
+.favorites {
+  min-width: 250px;
+}
+
+.groceryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dropdownContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+.groceryContainer h1 {
+  font-size: 2.5rem;
+}
+
+.groceryList {
+  width: 250px;
+}
+
+.recipeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
 }
 

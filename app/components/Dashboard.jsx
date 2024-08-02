@@ -201,7 +201,7 @@ export default function Dashboard() {
   );
 
   return (
-    <section className="dashboardSection">
+    <section>
       <Navbar />
       <Modal
         open={open}
