@@ -71,12 +71,11 @@
 .featuresHero {
   min-height: 500px;
   height: auto;
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 1rem 2rem;
+  margin: 0 2rem;
 }
 
 .featuresHero h1 {
@@ -118,7 +117,6 @@
 .featuresHero p {
   font-size: 1.5rem;
   color: #fff;
-
   margin-top: 1rem;
   text-wrap: wrap;
   white-space: wrap;
@@ -138,9 +136,10 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
-  position: static;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  height: auto;
   font-size: 1.3rem;
   font-weight: 300;
 }
@@ -227,6 +226,213 @@ form button:active {
 
 #mainFormContainer a:hover {
   color: #ffcc29;
+}
+
+/* Modal */
+.modal {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.modal h2 {
+  font-family: "Trirong", serif;
+  font-size: 2rem;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.modal input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #0f0c29;
+  font-size: 1.2rem;
+}
+
+/* Search */
+.searchContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+
+.searchContainer input {
+  max-width: 500px;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #0f0c29;
+  font-size: 1.2rem;
+}
+
+/* Dashboard */
+.dashboard {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftDashboard {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Inventory */
+.inventory {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 4rem;
+  gap: 1.5rem;
+}
+
+.inventory h1 {
+  font-family: "Trirong", serif;
+  font-size: 3rem;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.inventoryItems {
+  width: 700px;
+  height: auto;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.groceryContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.groceryContainer h1 {
+  font-family: "Trirong", serif;
+  font-size: 3rem;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.groceryList {
+  width: 450px;
+  height: auto;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.groceryList ul li{
+  list-style: none;
+  gap: 2rem;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.groceryList li {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: .06em;
+}
+
+.groceryList span {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: .06em;
+}
+
+.dropdownContainer select {
+  width: 250px;
+  height: 45px;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #0f0c29;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.dropdownContainer option {
+  color: #0f0c29;
+  background-color: #fff;
+  font-size: 1.2rem;
 }
 
 
@@ -357,6 +563,13 @@ form button:active {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
   }
+
+  #navLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 320px) {
@@ -385,5 +598,12 @@ form button:active {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
+  }
+
+  #navLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
