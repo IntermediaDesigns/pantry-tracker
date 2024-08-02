@@ -37,7 +37,7 @@ function FrontPage() {
                 <ul className="text-left">
                   <li className="mb-4">Add items to your pantry</li>
                   <li className="mb-4">Remove items from your pantry</li>
-                  <li className="mb-4">Save your list</li>
+                  <li className="mb-4">Save your grocery list</li>
                   <li className="mb-4">Add items to your favorites</li>
                 </ul>
               </div>

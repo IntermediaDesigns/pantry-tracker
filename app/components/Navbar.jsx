@@ -43,7 +43,7 @@ export default function Navbar() {
       </a>
       <div>
         {user ? (
-          <div className="flex gap-8">
+          <div className="flex gap-8" id="navLinks">
             <a
               href="/dashboard"
               className="bg-blue-500 text-white text-xl px-6 py-2 rounded-lg flex hover:bg-blue-700 hover:scale-110 transform transition duration-300 shadow-lg"

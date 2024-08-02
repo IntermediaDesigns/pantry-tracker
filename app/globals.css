@@ -142,6 +142,7 @@ footer {
   height: auto;
   font-size: 1.3rem;
   font-weight: 300;
+  letter-spacing: 0.06em;
 }
 
 /* Login/Signup Page */
@@ -247,7 +248,7 @@ form button:active {
   margin-left: auto;
   margin-right: auto;
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -313,13 +314,15 @@ form button:active {
 }
 
 .leftDashboard {
-  width: 50%;
+  min-width: 50%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  gap: 3rem;
 }
 
 /* Inventory */
@@ -332,6 +335,7 @@ form button:active {
   align-items: flex-end;
   padding-right: 4rem;
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .inventory h1 {
@@ -435,8 +439,104 @@ form button:active {
   font-size: 1.2rem;
 }
 
+/* Favorites */
+.favoritesContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.favoritesContainer h1 {
+  font-family: "Trirong", serif;
+  font-size: 3rem;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+
+.favorites {
+  min-width: 450px;
+  width: 100%;
+  height: auto;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.favorites ul li {
+  list-style: none;
+  gap: 2rem;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.favorites li {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 0.06em;
+}
+
+.favorites span {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 0.06em;
+}
+
+.favorites span:hover {
+  color: goldenrod;
+}
+
 
 /* Media Queries */
+@media (min-width: 850px) and (max-width: 1330px) {
+  .dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .leftDashboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 3rem;
+  }
+
+  .inventory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 4rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
 @media (max-width: 843px) {
   .heroSection h1 {
     font-size: 3rem;
@@ -504,6 +604,11 @@ form button:active {
     margin-top: 1rem;
     margin-left: 1.5rem;
     list-style: circle;
+  }
+
+  .dashboard {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 

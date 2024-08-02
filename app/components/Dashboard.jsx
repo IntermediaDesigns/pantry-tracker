@@ -156,8 +156,12 @@ export default function Dashboard() {
       />
       <div className="dashboard">
         <div className="leftDashboard">
-          <Favorites favorites={favorites} />
-          <Grocerylist inventory={inventory} userId={auth.currentUser?.uid} />
+          <div>
+            <Favorites favorites={favorites} toggleFavorite={toggleFavorite} />
+          </div>
+          <div>
+            <Grocerylist inventory={inventory} userId={auth.currentUser?.uid} />
+          </div>
         </div>
 
         <div className="inventory">
