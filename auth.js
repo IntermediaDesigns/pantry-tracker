@@ -42,10 +42,10 @@ export const signUp = async (username, password) => {
 
 export const signIn = async (username, password) => {
   try {
-    const hashedEmail = generateHashedEmail(username);
+    const email = generateEmail(username);
     const userCredential = await signInWithEmailAndPassword(
       auth,
-      hashedEmail,
+      email,
       password
     );
     return userCredential.user;
