@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  height: 100%;
 }
 
 /* Front Page */
@@ -129,7 +130,7 @@ footer {
   font-size: 1.3rem;
   font-weight: 300;
   letter-spacing: 0.06em;
-  z-index: 1000; /* Ensures the footer stays on top of other content */
+  z-index: 1000;
 }
 
 /* Login/Signup Page */

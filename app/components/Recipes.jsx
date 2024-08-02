@@ -1,4 +1,4 @@
-import { getRecipesByIngredients, getRecipeDetails } from "../../recipeApi";
+import { getRecipesByIngredients } from '../../edamamRecipeApi';
 import { useState, useEffect } from "react";
 
 export default function Recipes({ inventory }) {
@@ -11,18 +11,9 @@ export default function Recipes({ inventory }) {
       const ingredients = inventory.map((item) => item.name);
       try {
         const recipeData = await getRecipesByIngredients(ingredients);
-
-        // Fetch details for each recipe
-        const detailedRecipes = await Promise.all(
-          recipeData.map(async (recipe) => {
-            const details = await getRecipeDetails(recipe.id);
-            return { ...recipe, url: details.sourceUrl };
-          })
-        );
-
-        setRecipes(detailedRecipes);
+        setRecipes(recipeData);
       } catch (error) {
-        console.error("Error fetching recipes:", error);
+        console.error('Error fetching recipes:', error);
       } finally {
         setIsLoading(false);
       }

@@ -146,7 +146,7 @@ export default function Dashboard() {
   );
 
   return (
-    <>
+    <section className="dashboardSection">
       <Navbar />
       <Modal
         open={open}
@@ -263,6 +263,6 @@ export default function Dashboard() {
         </div>
       </div>
       <Footer />
-    </>
+    </section>
   );
 }

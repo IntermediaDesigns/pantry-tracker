@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@huggingface/inference": "^2.8.0",
     "axios": "^1.7.3",
     "crypto-js": "^4.2.0",
     "firebase": "^10.12.4",
