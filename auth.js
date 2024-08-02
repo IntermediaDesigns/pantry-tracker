@@ -6,49 +6,49 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import { app } from "./firebase"; // Make sure this path is correct
-import CryptoJS from 'crypto-js';
+import CryptoJS from "crypto-js";
 
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 // Helper function to generate a fake email
-const generateEmail = (username) =>
-  `${username.replace(/\s+/g, "")}@example.com`;
+// const generateEmail = (username) =>
+//   `${username.replace(/\s+/g, "")}@example.com`;
 
-  const generateHashedEmail = (username) => {
-    const fakeEmail = `${username.replace(/\s+/g, "")}@example.com`;
-    return CryptoJS.SHA256(fakeEmail).toString() + '@hashed.com';
-  };
+const generateHashedEmail = (username) => {
+  const fakeEmail = `${username.replace(/\s+/g, "")}@example.com`;
+  return CryptoJS.SHA256(fakeEmail).toString() + "@hashed.com";
+};
 
-  export const signUp = async (username, password) => {
-    try {
-      const hashedEmail = generateHashedEmail(username);
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        hashedEmail,
-        password
-      );
-      const user = userCredential.user;
-  
-      // Store the username and hashed email in Firestore
-      await setDoc(doc(db, "users", user.uid), {
-        username: username,
-        hashedEmail: hashedEmail
-      });
-  
-      return user;
-    } catch (error) {
-      console.error("Error signing up: ", error);
-      throw error;
-    }
-  };
+export const signUp = async (username, password) => {
+  try {
+    const hashedEmail = generateHashedEmail(username);
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      hashedEmail,
+      password
+    );
+    const user = userCredential.user;
+
+    // Store the username and hashed email in Firestore
+    await setDoc(doc(db, "users", user.uid), {
+      username: username,
+      hashedEmail: hashedEmail,
+    });
+
+    return user;
+  } catch (error) {
+    console.error("Error signing up: ", error);
+    throw error;
+  }
+};
 
 export const signIn = async (username, password) => {
   try {
-    const email = generateEmail(username);
+    const hashedEmail = generateHashedEmail(username);
     const userCredential = await signInWithEmailAndPassword(
       auth,
-      email,
+      hashedEmail,
       password
     );
     return userCredential.user;
