@@ -72,7 +72,7 @@ export default function Dashboard() {
 
       if (!imageUrl) {
         console.error("Failed to generate image, using placeholder");
-        imageUrl = "/placeholder.jpg"; // Use the path to your placeholder image
+        imageUrl = "/placeholder.jpg";
       }
 
       const docRef = doc(collection(firestore, "inventory"), item);
