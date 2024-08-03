@@ -88,9 +88,9 @@ const Grocerylist = ({ inventory, userId, groceryList, setGroceryList }) => {
               <span>{item}</span>
               <button
                 onClick={() => removeGroceryItem(item)}
-                className="bg-red-500 text-white px-2 py-1 rounded mt-2 hover:bg-red-600"
+                className="text-xl hover:scale-110 transition duration-300"
               >
-                Remove
+                🗑️
               </button>
             </li>
           ))}
