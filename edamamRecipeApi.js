@@ -5,7 +5,7 @@ const APP_KEY = process.env.NEXT_PUBLIC_EDAMAM_APP_KEY;
 const BASE_URL = 'https://api.edamam.com/search';
 const CACHE_KEY = 'recipeCache';
 const LAST_CALL_TIME_KEY = 'lastRecipeCallTime';
-const CALL_INTERVAL = 3 * 60 * 1000; // 5 minutes in milliseconds
+const CALL_INTERVAL = 2 * 60 * 1000; // 2 minutes in milliseconds
 
 export const getRecipesByIngredients = async (ingredients) => {
   const currentTime = new Date().getTime();

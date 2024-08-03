@@ -304,9 +304,9 @@ const itemsPerPage = 10;
 
                   <button
                     onClick={() => removeItem(item.name)}
-                    className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                    className="text-xl hover:scale-110 transition duration-300"
                   >
-                    Remove
+                    🗑️
                   </button>
                   <button
                     onClick={() => toggleFavorite(item.name)}
