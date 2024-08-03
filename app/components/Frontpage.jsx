@@ -1,6 +1,7 @@
 import React from "react";
 import "../globals.css";
 import Footer from "./Footer";
+import Image from "next/image";
 
 function FrontPage() {
   return (
@@ -17,11 +18,13 @@ function FrontPage() {
           id="featuresContainer"
         >
           <div>
-            <img
-              src="../../fruitveggies.jpg"
-              alt="pantry"
+                     <Image
+              src="/fruitveggies.jpg"
+              alt="Fruit and vegetables"
               className="rounded-lg shadow-lg"
               id="frontImg"
+              width={450}
+              height={400}
             />
           </div>
           <div className="text-center">
