@@ -34,7 +34,7 @@ export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(false);
   const [groceryList, setGroceryList] = useState([]);
   const [page, setPage] = useState(1);
-const itemsPerPage = 10;
+  const itemsPerPage = 10;
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -166,9 +166,15 @@ const itemsPerPage = 10;
       await updateDoc(userRef, {
         groceryList: arrayRemove(item),
       });
+      // Update local groceryList state
+      setGroceryList((prevList) =>
+        prevList.filter((listItem) => listItem !== item)
+      );
     }
 
     await updateInventory();
+    await updateFavorites();
+    await updateGroceryList();
   };
 
   const toggleFavorite = async (itemName) => {
@@ -261,7 +267,8 @@ const itemsPerPage = 10;
               {filteredInventory.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center justify-between p-4 border-b mb-4" id="inventoryItem"
+                  className="flex items-center justify-between p-4 border-b mb-4"
+                  id="inventoryItem"
                 >
                   {item.imageUrl ? (
                     <Image
