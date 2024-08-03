@@ -28,15 +28,16 @@ function FrontPage() {
             <div>
               <h1>Features</h1>
             </div>
-            <p className="text-lg">
+            <p className="text-lg mr-16">
               Here are some of the features of Pantry Pro:
             </p>
             <div className="mt-8">
               <ul className="text-left">
-                <li className="mb-4">Add items to your pantry</li>
+                <li className="mb-4 ">Add items to your pantry</li>
                 <li className="mb-4">Remove items from your pantry</li>
-                <li className="mb-4">Save your grocery list</li>
+                <li className="mb-4">Save to your grocery list</li>
                 <li className="mb-4">Add items to your favorites</li>
+                <li className="mb-4">See recipe suggestions based on your inventory</li>
               </ul>
             </div>
           </div>

@@ -33,6 +33,8 @@ export default function Dashboard() {
   const auth = getAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [groceryList, setGroceryList] = useState([]);
+  const [page, setPage] = useState(1);
+const itemsPerPage = 10;
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
